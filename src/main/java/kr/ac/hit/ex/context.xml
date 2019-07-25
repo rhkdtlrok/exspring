@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<!-- 스프링에선 자바객체를 bean라고함 -->
+	<!-- 클래스의 객체를 생성하여 각이름별로 보관(등록) -->
+	<!-- <bean name="a" class="kr.ac.hit.ex.App"> -->
+	<!-- <property name="greet" ref="b"></property> -->
+	<!-- 객체의 greet 변수에 스프링에 b라는 이름으로 등록된 객체를 저장 -->
+	<!-- </bean> -->
+	<!-- <bean name="b" class="kr.ac.hit.ex.Hello"></bean> -->
+	<!-- <bean name="c" class="kr.ac.hit.ex.Bye"></bean> -->
+
+	<!-- 패키지 아래있는 클래스중에서 @component,controller,service,reposirory 가 붙은 클래스를 
+		모두 등록 하라는 것 -->
+	<context:component-scan
+		base-package="kr.ac.hit.ex"></context:component-scan>
+	<!-- @aspect 등 aop 관련 어노테이션을 사용하여 설정을 하도록 함 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+</beans>
